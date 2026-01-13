@@ -1,0 +1,1001 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江浙沪7日游旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+            margin: -20px -20px 30px -20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        h4 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .day-section {
+            background: #f8f9fa;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .day-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .info-card strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "📍";
+            position: absolute;
+            left: 0;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 500px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .route-map {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .coordinate-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .coordinate-link:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .route-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .activities-container {
+            margin: 20px 0;
+        }
+        
+        .activities {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 0 0 20px 0;
+            border-left: 4px solid #ff9800;
+            width: 100%;
+        }
+        
+        .photo-gallery {
+            margin: 0;
+            display: block;
+        }
+        
+        .photo-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+            display: inline-block;
+            max-width: 100%;
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .photo-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            width: auto;
+        }
+        
+        .photo-item .photo-caption {
+            padding: 10px;
+            background: white;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        
+        .attraction-photo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .budget-table th,
+        .budget-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .budget-table th {
+            background: #667eea;
+            color: white;
+        }
+        
+        .budget-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            background: #f8f9fa;
+            border-radius: 0 0 15px 15px;
+            margin: 30px -20px -20px -20px;
+            color: #666;
+        }
+        
+        .day-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab-button.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+    <!-- 高德地图JavaScript API -->
+    <!-- 
+    错误说明：USERKEY_PLAT_NOMATCH 表示API Key的平台类型不匹配
+    高德地图JS API需要"Web服务(JS API)"类型的Key，而不是其他类型的Key
+    
+    如何申请正确的API Key：
+    1. 访问 https://lbs.amap.com/ 注册/登录账号
+    2. 进入"控制台" -> "应用管理" -> "我的应用"
+    3. 点击"创建新应用"（如果还没有应用）
+    4. 在应用下点击"添加Key"
+    5. 服务平台选择："Web服务(JS API)"
+    6. 填写Key名称，提交后即可获取正确的Key
+    7. 将下面的 YOUR_API_KEY 替换为您申请的Key
+    -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=c8bfe045e7c474df5fd5fe2f8d7471b2"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏮 江浙沪7日游旅游攻略 🏮</h1>
+            <p class="subtitle">探索江南水乡 · 感受古典韵味 · 体验现代繁华</p>
+        </header>
+
+        <section id="overview">
+            <h2>行程概览</h2>
+            <p>本攻略覆盖上海、浙江、江苏三省的主要旅游景点，7天时间游览经典景点，体验江南水乡文化和现代化都市风情。</p>
+            
+            <div class="map-container" id="overviewMap"></div>
+        </section>
+
+        <!-- 第1天 -->
+        <section class="day-section">
+            <span class="day-badge">第1天</span>
+            <h2>上海 - 外滩与城隍庙</h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('day1', 'info')">行程信息</button>
+                <button class="tab-button" onclick="showTab('day1', 'map')">地图位置</button>
+            </div>
+            
+            <div id="day1-info" class="tab-content active">
+                <h4>上午：外滩游览</h4>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <strong>景点名称</strong>
+                        外滩（中山东一路49号）
+                    </div>
+                    <div class="info-card">
+                        <strong>坐标位置</strong>
+                        121.492127, 31.233516
+                        <a href="https://uri.amap.com/marker?position=121.492127,31.233516&name=外滩" target="_blank" class="coordinate-link">查看地图</a>
+                    </div>
+                    <div class="info-card">
+                        <strong>开放时间</strong>
+                        24小时开放
+                    </div>
+                    <div class="info-card">
+                        <strong>评分</strong>
+                        <span class="highlight">4.9分</span>
+                    </div>
+                </div>
+                
+                <div class="activities-container">
+                    <div class="activities">
+                        <h4>推荐活动：</h4>
+                        <ul>
+                            <li>欣赏黄浦江两岸风光</li>
+                            <li>参观外滩万国建筑博览群</li>
+                            <li>远眺东方明珠、上海中心等标志性建筑</li>
+                            <li>拍摄经典外滩风景照</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="http://store.is.autonavi.com/showpic/b9c402b7d34ea98654cc915e567761dd" alt="外滩" onerror="this.src='https://images.unsplash.com/photo-1548919973-5ce626d45d3c?w=600&q=80'">
+                            <div class="photo-caption">外滩风光</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4>下午：城隍庙与豫园</h4>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <strong>景点名称</strong>
+                        上海城隍庙（方浜中路249号）
+                    </div>
+                    <div class="info-card">
+                        <strong>坐标位置</strong>
+                        121.492466, 31.225879
+                        <a href="https://uri.amap.com/marker?position=121.492466,31.225879&name=上海城隍庙" target="_blank" class="coordinate-link">查看地图</a>
+                    </div>
+                    <div class="info-card">
+                        <strong>游览时间</strong>
+                        3-4小时
+                    </div>
+                </div>
+                
+                <div class="activities-container">
+                    <div class="activities">
+                        <h4>推荐活动：</h4>
+                        <ul>
+                            <li>参观城隍庙古建筑</li>
+                            <li>游览豫园（江南古典园林）</li>
+                            <li>品尝上海特色小吃（小笼包、生煎包、五香豆等）</li>
+                            <li>购买传统手工艺品</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="http://store.is.autonavi.com/showpic/518f824f343115a063effa52ea4cb224" alt="上海城隍庙" onerror="this.src='https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&q=80'">
+                            <div class="photo-caption">城隍庙</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p><strong>住宿建议：</strong>上海黄浦区或外滩附近</p>
+            </div>
+            
+            <div id="day1-map" class="tab-content">
+                <div class="map-container" id="day1Map"></div>
+            </div>
+        </section>
+
+        <!-- 第2天 -->
+        <section class="day-section">
+            <span class="day-badge">第2天</span>
+            <h2>上海 → 杭州 - 西湖与灵隐寺</h2>
+            
+            <div class="route-info">
+                <h4>🚗 交通信息</h4>
+                <p><strong>出发地：</strong>上海外滩</p>
+                <p><strong>目的地：</strong>杭州西湖</p>
+                <p><strong>距离：</strong>约193公里</p>
+                <p><strong>驾车时间：</strong>约2.5-3小时（走G60沪昆高速）</p>
+                <p><strong>建议出发时间：</strong>早上8:00</p>
+            </div>
+            
+            <h4>上午：前往杭州</h4>
+            <p>08:00 从上海出发 → 11:00 抵达杭州，入住酒店或直接前往西湖</p>
+            
+            <h4>下午：西湖风景名胜区</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    杭州西湖风景名胜区（西湖街道龙井路1号）
+                </div>
+                <div class="info-card">
+                    <strong>坐标位置</strong>
+                    120.121358, 30.222692
+                    <a href="https://uri.amap.com/marker?position=120.121358,30.222692&name=杭州西湖" target="_blank" class="coordinate-link">查看地图</a>
+                </div>
+                <div class="info-card">
+                    <strong>等级</strong>
+                    <span class="highlight">AAAAA级景区</span>
+                </div>
+                <div class="info-card">
+                    <strong>评分</strong>
+                    <span class="highlight">4.9分</span>
+                </div>
+            </div>
+            
+            <div class="activities-container">
+                <div class="activities">
+                    <h4>推荐路线：</h4>
+                    <p>断桥残雪 → 白堤 → 孤山 → 苏堤 或 乘坐游船环湖游览</p>
+                    <h4>推荐活动：</h4>
+                    <ul>
+                        <li>漫步苏堤春晓</li>
+                        <li>参观断桥残雪</li>
+                        <li>游览三潭印月</li>
+                        <li>欣赏湖光山色</li>
+                    </ul>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="http://store.is.autonavi.com/showpic/046f7db069e380fdc29375807debee83" alt="杭州西湖" onerror="this.src='https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80'">
+                        <div class="photo-caption">西湖美景</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>住宿建议：</strong>杭州西湖附近</p>
+        </section>
+
+        <!-- 第3天 -->
+        <section class="day-section">
+            <span class="day-badge">第3天</span>
+            <h2>杭州 - 灵隐寺 → 乌镇</h2>
+            
+            <h4>上午：灵隐寺</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    灵隐寺（法云弄1号）
+                </div>
+                <div class="info-card">
+                    <strong>游览时间</strong>
+                    2-3小时
+                </div>
+            </div>
+            
+            <div class="activities-container">
+                <div class="activities">
+                    <h4>推荐活动：</h4>
+                    <ul>
+                        <li>参观天王殿、大雄宝殿</li>
+                        <li>游览飞来峰石窟</li>
+                        <li>感受千年古刹的禅意</li>
+                    </ul>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="http://store.is.autonavi.com/showpic/4aa0a6a1b6ee72c9833441f363cbb43a" alt="灵隐寺" onerror="this.src='https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&q=80'">
+                        <div class="photo-caption">灵隐寺</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="route-info">
+                <h4>🚗 前往乌镇</h4>
+                <p><strong>出发地：</strong>杭州西湖</p>
+                <p><strong>目的地：</strong>乌镇西栅景区</p>
+                <p><strong>坐标：</strong>120.484263, 30.750266</p>
+                <p><strong>距离：</strong>约80公里</p>
+                <p><strong>驾车时间：</strong>约1.5小时</p>
+            </div>
+            
+            <h4>晚上：乌镇西栅夜景</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    乌镇西栅景区（石佛南路18号）
+                </div>
+                <div class="info-card">
+                    <strong>坐标位置</strong>
+                    120.484263, 30.750266
+                    <a href="https://uri.amap.com/marker?position=120.484263,30.750266&name=乌镇西栅" target="_blank" class="coordinate-link">查看地图</a>
+                </div>
+            </div>
+            
+            <div class="activities-container">
+                <div class="activities">
+                    <h4>推荐活动：</h4>
+                    <ul>
+                        <li>夜游西栅，欣赏古镇夜景</li>
+                        <li>体验江南水乡的宁静</li>
+                        <li>品尝当地特色美食</li>
+                        <li>体验古镇民宿（建议住景区内）</li>
+                    </ul>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="http://store.is.autonavi.com/showpic/4b67afbc2a499100ea4aa6c8f2922718" alt="乌镇西栅" onerror="this.src='https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80'">
+                        <div class="photo-caption">乌镇西栅</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>住宿建议：</strong>乌镇西栅景区内民宿</p>
+        </section>
+
+        <!-- 第4天 -->
+        <section class="day-section">
+            <span class="day-badge">第4天</span>
+            <h2>乌镇 → 西塘 → 周庄（古镇一日游）</h2>
+            
+            <h4>上午：乌镇东栅</h4>
+            <div class="activities">
+                <h4>推荐活动：</h4>
+                <ul>
+                    <li>参观茅盾故居</li>
+                    <li>体验原汁原味的江南水乡</li>
+                    <li>观看传统手工艺展示</li>
+                </ul>
+            </div>
+            
+            <div class="route-info">
+                <h4>🚗 前往西塘</h4>
+                <p><strong>距离：</strong>约30公里 | <strong>驾车时间：</strong>约40分钟</p>
+            </div>
+            
+            <h4>下午：西塘古镇</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    西塘古镇（南苑路258号）
+                </div>
+                <div class="info-card">
+                    <strong>坐标位置</strong>
+                    120.887667, 30.939426
+                    <a href="https://uri.amap.com/marker?position=120.887667,30.939426&name=西塘古镇" target="_blank" class="coordinate-link">查看地图</a>
+                </div>
+            </div>
+            
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="http://store.is.autonavi.com/showpic/a144ebb7c9009ab356c91e3dec3329bb" alt="西塘古镇" onerror="this.src='https://images.unsplash.com/photo-1515847049296-07fa8634953c?w=600&q=80'">
+                    <div class="photo-caption">西塘古镇</div>
+                </div>
+            </div>
+            
+            <div class="route-info">
+                <h4>🚗 前往周庄</h4>
+                <p><strong>距离：</strong>约40公里 | <strong>驾车时间：</strong>约1小时</p>
+            </div>
+            
+            <h4>晚上：周庄古镇</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    周庄古镇（全福路42号）
+                </div>
+                <div class="info-card">
+                    <strong>坐标位置</strong>
+                    120.850910, 31.114744
+                    <a href="https://uri.amap.com/marker?position=120.850910,31.114744&name=周庄古镇" target="_blank" class="coordinate-link">查看地图</a>
+                </div>
+            </div>
+            
+            <div class="activities-container">
+                <div class="activities">
+                    <h4>推荐活动：</h4>
+                    <ul>
+                        <li>夜游周庄，体验"中国第一水乡"</li>
+                        <li>参观沈厅、张厅</li>
+                        <li>品尝万三蹄等周庄特色美食</li>
+                    </ul>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="http://store.is.autonavi.com/showpic/c25463f31b94e681d96182971e40d73d" alt="周庄古镇" onerror="this.src='https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80'">
+                        <div class="photo-caption">周庄古镇</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>住宿建议：</strong>周庄古镇内或附近</p>
+        </section>
+
+        <!-- 第5天 -->
+        <section class="day-section">
+            <span class="day-badge">第5天</span>
+            <h2>周庄 → 苏州 - 古典园林</h2>
+            
+            <h4>下午：苏州古典园林</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    拙政园（东北街178号）
+                </div>
+                <div class="info-card">
+                    <strong>坐标位置</strong>
+                    120.628659, 31.324000
+                    <a href="https://uri.amap.com/marker?position=120.628659,31.324000&name=拙政园" target="_blank" class="coordinate-link">查看地图</a>
+                </div>
+                <div class="info-card">
+                    <strong>等级</strong>
+                    <span class="highlight">AAAAA级景区</span>
+                </div>
+                <div class="info-card">
+                    <strong>开放时间</strong>
+                    3-10月：07:30-17:30<br>
+                    1-2月、11-12月：07:30-17:00
+                </div>
+            </div>
+            
+            <div class="activities-container">
+                <div class="activities">
+                    <h4>推荐活动：</h4>
+                    <ul>
+                        <li>欣赏江南古典园林艺术</li>
+                        <li>参观园林博物馆（免费）</li>
+                        <li>可选择其他园林：留园、狮子林、网师园</li>
+                    </ul>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="http://store.is.autonavi.com/showpic/72263ebfa1dfbeefe0269400e6ba822f" alt="拙政园" onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80'">
+                        <div class="photo-caption">拙政园</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h4>晚上：苏州古城</h4>
+            <ul>
+                <li>游览平江路历史街区</li>
+                <li>品尝苏帮菜（松鼠鳜鱼、阳澄湖大闸蟹等）</li>
+                <li>体验苏州夜生活</li>
+            </ul>
+            
+            <p><strong>住宿建议：</strong>苏州古城内或拙政园附近</p>
+        </section>
+
+        <!-- 第6天 -->
+        <section class="day-section">
+            <span class="day-badge">第6天</span>
+            <h2>苏州 → 南京 - 夫子庙与秦淮河</h2>
+            
+            <div class="route-info">
+                <h4>🚗 交通信息</h4>
+                <p><strong>出发地：</strong>苏州拙政园</p>
+                <p><strong>目的地：</strong>南京夫子庙</p>
+                <p><strong>距离：</strong>约221公里</p>
+                <p><strong>驾车时间：</strong>约2.5-3小时（走G42沪蓉高速）</p>
+            </div>
+            
+            <h4>下午：夫子庙与秦淮河</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    南京夫子庙（贡院街152号）
+                </div>
+                <div class="info-card">
+                    <strong>坐标位置</strong>
+                    118.788899, 32.020660
+                    <a href="https://uri.amap.com/marker?position=118.788899,32.020660&name=南京夫子庙" target="_blank" class="coordinate-link">查看地图</a>
+                </div>
+            </div>
+            
+            <div class="activities-container">
+                <div class="activities">
+                    <h4>推荐活动：</h4>
+                    <ul>
+                        <li>参观夫子庙古建筑群</li>
+                        <li>游览夫子庙秦淮风光带</li>
+                        <li>乘船游览秦淮河</li>
+                        <li>品尝南京特色小吃（鸭血粉丝汤、盐水鸭等）</li>
+                        <li>购买南京特产（雨花石、云锦等）</li>
+                    </ul>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="http://store.is.autonavi.com/showpic/8fd02cf1c04a8a5a91e32a5354d7a023" alt="南京夫子庙" onerror="this.src='https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80'">
+                        <div class="photo-caption">夫子庙</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>住宿建议：</strong>南京夫子庙附近</p>
+        </section>
+
+        <!-- 第7天 -->
+        <section class="day-section">
+            <span class="day-badge">第7天</span>
+            <h2>南京 - 中山陵 → 返程</h2>
+            
+            <h4>上午：中山陵</h4>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>景点名称</strong>
+                    中山陵景区（石象路7号）
+                </div>
+                <div class="info-card">
+                    <strong>坐标位置</strong>
+                    118.854097, 32.054508
+                    <a href="https://uri.amap.com/marker?position=118.854097,32.054508&name=中山陵" target="_blank" class="coordinate-link">查看地图</a>
+                </div>
+            </div>
+            
+            <div class="activities-container">
+                <div class="activities">
+                    <h4>推荐活动：</h4>
+                    <ul>
+                        <li>参观中山陵祭堂</li>
+                        <li>游览音乐台</li>
+                        <li>登高远眺南京城景</li>
+                        <li>感受伟人陵园的庄严肃穆</li>
+                    </ul>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="http://store.is.autonavi.com/showpic/46bf800a21c42453ff756fc2b77c710f" alt="中山陵" onerror="this.src='https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&q=80'">
+                        <div class="photo-caption">中山陵</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h4>下午：其他景点（可选）</h4>
+            <ul>
+                <li>明孝陵</li>
+                <li>总统府</li>
+                <li>玄武湖</li>
+                <li>或根据返程时间自由安排</li>
+            </ul>
+        </section>
+
+        <!-- 实用信息 -->
+        <section id="practical-info">
+            <h2>实用信息</h2>
+            
+            <h3>交通建议</h3>
+            <div class="info-card">
+                <p><strong>推荐方式：</strong>自驾游或包车（最灵活）</p>
+                <p><strong>公共交通：</strong></p>
+                <ul>
+                    <li>上海-杭州：高铁约1小时</li>
+                    <li>杭州-乌镇：长途汽车</li>
+                    <li>乌镇-西塘-周庄：建议包车</li>
+                    <li>苏州-南京：高铁约1.5小时</li>
+                </ul>
+            </div>
+            
+            <h3>住宿建议</h3>
+            <ul>
+                <li>第1晚：上海（外滩或城隍庙附近）</li>
+                <li>第2晚：杭州（西湖附近）</li>
+                <li>第3晚：乌镇（景区内民宿）</li>
+                <li>第4晚：周庄（古镇内）</li>
+                <li>第5晚：苏州（古城内）</li>
+                <li>第6晚：南京（夫子庙附近）</li>
+            </ul>
+            
+            <h3>美食推荐</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>上海</strong>
+                    小笼包、生煎包、白切鸡、上海本帮菜
+                </div>
+                <div class="info-card">
+                    <strong>杭州</strong>
+                    西湖醋鱼、东坡肉、龙井虾仁、片儿川
+                </div>
+                <div class="info-card">
+                    <strong>乌镇/西塘/周庄</strong>
+                    万三蹄、芡实糕、白水鱼、酱鸭
+                </div>
+                <div class="info-card">
+                    <strong>苏州</strong>
+                    松鼠鳜鱼、阳澄湖大闸蟹、苏式月饼、碧螺春
+                </div>
+                <div class="info-card">
+                    <strong>南京</strong>
+                    盐水鸭、鸭血粉丝汤、牛肉锅贴、糖芋苗
+                </div>
+            </div>
+            
+            <h3>预算参考（每人，仅供参考）</h3>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>预算范围</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>交通费</td>
+                        <td>1000-2000元</td>
+                    </tr>
+                    <tr>
+                        <td>住宿费（6晚）</td>
+                        <td>900-3000元</td>
+                    </tr>
+                    <tr>
+                        <td>餐饮费（7天）</td>
+                        <td>700-2100元</td>
+                    </tr>
+                    <tr>
+                        <td>门票费</td>
+                        <td>800-1500元</td>
+                    </tr>
+                    <tr>
+                        <td>购物及其他</td>
+                        <td>500-2000元</td>
+                    </tr>
+                    <tr style="font-weight: bold; background: #f0f0f0;">
+                        <td>总计</td>
+                        <td>3900-9600元/人</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>注意事项</h3>
+            <ol style="padding-left: 25px;">
+                <li><strong>门票预订：</strong>部分景点建议提前网上购票，尤其是节假日</li>
+                <li><strong>天气准备：</strong>江南地区多雨，建议携带雨具</li>
+                <li><strong>穿着建议：</strong>舒适的步行鞋，适合拍照的服装</li>
+                <li><strong>最佳旅游时间：</strong>春季（3-5月）和秋季（9-11月）</li>
+                <li><strong>摄影建议：</strong>准备相机或手机，很多景点适合拍照</li>
+                <li><strong>语言：</strong>普通话通用，部分地区使用方言但基本交流无障碍</li>
+            </ol>
+            
+            <h3>紧急联系方式</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <strong>报警电话</strong>110
+                </div>
+                <div class="info-card">
+                    <strong>医疗急救</strong>120
+                </div>
+                <div class="info-card">
+                    <strong>旅游投诉</strong>12301
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p><strong>祝您旅途愉快！</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                本攻略基于高德地图数据生成，具体信息请以实际情况为准。<br>
+                建议出行前关注天气预报和景区官方信息。
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 标签切换功能
+        function showTab(day, tab) {
+            // 隐藏所有标签内容
+            document.querySelectorAll(`#${day}-info, #${day}-map`).forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // 显示选中的标签内容
+            document.getElementById(`${day}-${tab}`).classList.add('active');
+            
+            // 更新按钮状态
+            const buttons = document.querySelectorAll(`.day-section:has(#${day}-info) .tab-button`);
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // 高德地图初始化
+        function initMap() {
+            // 等待地图API加载完成
+            if (typeof AMap === 'undefined') {
+                setTimeout(initMap, 100);
+                return;
+            }
+            
+            try {
+                // 总览地图 - 显示所有景点
+                const overviewMap = new AMap.Map('overviewMap', {
+                    zoom: 8,
+                    center: [120.5, 31.5],
+                    viewMode: '2D',
+                    mapStyle: 'amap://styles/normal'
+                });
+                
+                // 添加所有景点标记
+                const markers = [
+                    {name: '外滩', position: [121.492127, 31.233516]},
+                    {name: '杭州西湖', position: [120.121358, 30.222692]},
+                    {name: '乌镇', position: [120.484263, 30.750266]},
+                    {name: '西塘', position: [120.887667, 30.939426]},
+                    {name: '周庄', position: [120.850910, 31.114744]},
+                    {name: '拙政园', position: [120.628659, 31.324000]},
+                    {name: '夫子庙', position: [118.788899, 32.020660]},
+                    {name: '中山陵', position: [118.854097, 32.054508]}
+                ];
+                
+                markers.forEach(marker => {
+                    new AMap.Marker({
+                        position: marker.position,
+                        title: marker.name,
+                        map: overviewMap
+                    });
+                });
+            } catch (error) {
+                console.error('地图初始化失败:', error);
+            }
+        }
+        
+        // 页面加载完成后初始化地图
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                // 延迟一点确保API加载完成
+                setTimeout(initMap, 200);
+            });
+        } else {
+            setTimeout(initMap, 200);
+        }
+    </script>
+</body>
+</html>
